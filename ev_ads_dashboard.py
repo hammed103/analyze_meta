@@ -28,15 +28,23 @@ st.set_page_config(
 def load_data():
     """Load and cache the EV ads data."""
     try:
-        # Try to load the classified version first, then fall back to base version
+        # Try to load the ultimate AI enhanced version first, then fall back to other versions
         try:
-            df = pd.read_csv("facebook_ads_electric_vehicles_with_classifications.csv")
-            st.info("✓ Loaded data with page classifications")
+            df = pd.read_csv("facebook_ads_electric_vehicles_ultimate_ai_enhanced.csv")
+            st.info(
+                "✓ Loaded ultimate AI enhanced data with OpenAI summaries and image themes"
+            )
         except FileNotFoundError:
-            df = pd.read_csv("facebook_ads_electric_vehicles.csv")
-            # Add missing columns with default values
-            df["page_classification"] = "unknown"
-            st.info("✓ Loaded base EV ads data (no classifications)")
+            try:
+                df = pd.read_csv(
+                    "facebook_ads_electric_vehicles_with_openai_summaries.csv"
+                )
+                st.info("✓ Loaded data with OpenAI summaries")
+            except FileNotFoundError:
+                df = pd.read_csv("facebook_ads_electric_vehicles.csv")
+                # Add missing columns with default values
+                df["page_classification"] = "unknown"
+                st.info("✓ Loaded base EV ads data (no classifications)")
 
         # Ensure required columns exist
         required_columns = {
@@ -54,6 +62,9 @@ def load_data():
             "start_date": "",
             "end_date": "",
             "targeted_countries": "",
+            "matched_car_models": "Unknown",
+            "openai_summary": "",
+            "ad_theme": "",
         }
 
         for col, default_val in required_columns.items():
@@ -464,6 +475,28 @@ def main():
                             else:
                                 st.error("❌ Could not load image")
                                 st.write(f"URL: {row['first_image_url'][:50]}...")
+
+                            # Show AI insights prominently
+                            if (
+                                "ad_theme" in row
+                                and pd.notna(row["ad_theme"])
+                                and str(row["ad_theme"]).strip()
+                            ):
+                                st.markdown("**🎨 Image Theme:**")
+                                theme_text = str(row["ad_theme"])
+                                st.info(theme_text)
+
+                            # Show OpenAI summary prominently
+                            if (
+                                "openai_summary" in row
+                                and pd.notna(row["openai_summary"])
+                                and str(row["openai_summary"]).strip()
+                            ):
+                                with st.expander(
+                                    "🤖 AI Analysis Summary", expanded=True
+                                ):
+                                    summary_text = str(row["openai_summary"])
+                                    st.markdown(summary_text)
 
                             # Show ad details in expander
                             with st.expander("📋 Ad Details"):
