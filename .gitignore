@@ -5,7 +5,7 @@
 # DATA FILES - DO NOT COMMIT
 # =============================================================================
 
-# CSV files (all Facebook ads data)
+# CSV files (all Facebook ads data - too large for Git)
 *.csv
 
 # JSON files (all analysis results and raw data)

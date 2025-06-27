@@ -28,23 +28,31 @@ st.set_page_config(
 def load_data():
     """Load and cache the EV ads data."""
     try:
-        # Try to load the ultimate AI enhanced version first, then fall back to other versions
+        # Try to load the cleaned version first, then fall back to other versions
         try:
-            df = pd.read_csv("facebook_ads_electric_vehicles_ultimate_ai_enhanced.csv")
+            df = pd.read_csv("facebook_ads_electric_vehicles_clean.csv")
             st.info(
-                "✓ Loaded ultimate AI enhanced data with OpenAI summaries and image themes"
+                "✓ Loaded cleaned AI enhanced data with OpenAI summaries and image themes (optimized file size)"
             )
         except FileNotFoundError:
             try:
                 df = pd.read_csv(
-                    "facebook_ads_electric_vehicles_with_openai_summaries.csv"
+                    "facebook_ads_electric_vehicles_ultimate_ai_enhanced.csv"
                 )
-                st.info("✓ Loaded data with OpenAI summaries")
+                st.info(
+                    "✓ Loaded ultimate AI enhanced data with OpenAI summaries and image themes"
+                )
             except FileNotFoundError:
-                df = pd.read_csv("facebook_ads_electric_vehicles.csv")
-                # Add missing columns with default values
-                df["page_classification"] = "unknown"
-                st.info("✓ Loaded base EV ads data (no classifications)")
+                try:
+                    df = pd.read_csv(
+                        "facebook_ads_electric_vehicles_with_openai_summaries.csv"
+                    )
+                    st.info("✓ Loaded data with OpenAI summaries")
+                except FileNotFoundError:
+                    df = pd.read_csv("facebook_ads_electric_vehicles.csv")
+                    # Add missing columns with default values
+                    df["page_classification"] = "unknown"
+                    st.info("✓ Loaded base EV ads data (no classifications)")
 
         # Ensure required columns exist
         required_columns = {
