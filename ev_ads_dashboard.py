@@ -15,6 +15,7 @@ import requests
 from PIL import Image
 import io
 import os
+import glob
 
 # Page configuration
 st.set_page_config(
@@ -25,46 +26,95 @@ st.set_page_config(
 )
 
 
-def download_large_file_if_missing():
-    """Download the large dataset if it's missing (for Streamlit Cloud deployment)."""
+def load_data_from_chunks():
+    """Load data from chunked files in the Data directory."""
+    import glob
+
+    data_dir = "Data"
+    chunk_pattern = os.path.join(data_dir, "facebook_ads_chunk_*.csv")
+    chunk_files = sorted(glob.glob(chunk_pattern))
+
+    if not chunk_files:
+        return None
+
+    st.info(f"📁 Loading data from {len(chunk_files)} chunk files in {data_dir}/")
+
+    # Load and combine all chunks
+    df_list = []
+    progress_bar = st.progress(0)
+
+    for i, file in enumerate(chunk_files):
+        df_chunk = pd.read_csv(file)
+        df_list.append(df_chunk)
+        progress_bar.progress((i + 1) / len(chunk_files))
+
+    combined_df = pd.concat(df_list, ignore_index=True)
+    st.success(
+        f"✅ Successfully combined {len(chunk_files)} chunks into {len(combined_df)} total rows"
+    )
+
+    return combined_df
+
+
+def check_for_large_file_or_chunks():
+    """Check for the large file or chunked data and provide guidance."""
     filename = "facebook_ads_electric_vehicles_with_openai_summaries.csv"
+    data_dir = "Data"
 
-    if not os.path.exists(filename):
-        st.warning("📥 Large dataset not found. Downloading from external source...")
+    # Check if large file exists
+    if os.path.exists(filename):
+        return "large_file"
 
-        # You can host this file on Google Drive, Dropbox, or another cloud service
-        # For now, we'll create a fallback message
-        st.error(
-            """
-        ⚠️ **Large dataset file missing!**
+    # Check if chunks exist
+    chunk_pattern = os.path.join(data_dir, "facebook_ads_chunk_*.csv")
+    chunk_files = glob.glob(chunk_pattern)
 
-        The file `facebook_ads_electric_vehicles_with_openai_summaries.csv` is not available.
+    if chunk_files:
+        return "chunks"
 
-        **Options to fix this:**
-        1. Upload the file to a cloud service (Google Drive, Dropbox, etc.)
-        2. Use the smaller sample dataset instead
-        3. Split the large file into smaller chunks
-
-        For now, the app will try to use alternative datasets.
+    # Neither exists - show instructions
+    st.warning("📥 Large dataset not found.")
+    st.info(
         """
-        )
-        return False
-    return True
+    **To enable the full dataset:**
+
+    **Option 1: Split the large file (Recommended)**
+    1. Place `facebook_ads_electric_vehicles_with_openai_summaries.csv` in this directory
+    2. Run: `python split_large_file.py`
+    3. This will create chunks in the `Data/` folder
+    4. Refresh the app
+
+    **Option 2: Use the large file directly**
+    - Place `facebook_ads_electric_vehicles_with_openai_summaries.csv` in this directory
+
+    The app will continue with available smaller datasets.
+    """
+    )
+    return "none"
 
 
 @st.cache_data
 def load_data():
     """Load and cache the EV ads data."""
-    # Check if large file exists, download if missing
-    download_large_file_if_missing()
+    # Check what data sources are available
+    data_source = check_for_large_file_or_chunks()
 
     try:
-        # Try to load the sample version first (GitHub-friendly), then fall back to other versions
+        # Try to load from chunks first, then large file, then fallback options
+        if data_source == "chunks":
+            df = load_data_from_chunks()
+            if df is not None:
+                return df
+
+        elif data_source == "large_file":
+            df = pd.read_csv("facebook_ads_electric_vehicles_with_openai_summaries.csv")
+            st.info("✓ Loaded full dataset with OpenAI summaries and image themes")
+            return df
+
+        # Fallback to other available datasets
         try:
             df = pd.read_csv("facebook_ads_electric_vehicles_with_openai_summaries.csv")
-            st.info(
-                "✓ Loaded sample dataset (5,000 ads) with OpenAI summaries and image themes - GitHub-friendly size"
-            )
+            st.info("✓ Loaded dataset with OpenAI summaries and image themes")
         except FileNotFoundError:
             try:
                 df = pd.read_csv(

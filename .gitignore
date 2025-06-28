@@ -7,8 +7,10 @@
 
 # CSV files (all Facebook ads data - too large for Git)
 *.csv
-# Allow only the small sample dataset for GitHub
-!facebook_ads_electric_vehicles_with_openai_summaries.csv
+# Allow chunked data files in Data folder (GitHub-friendly sizes)
+!Data/*.csv
+# Exclude the original large file
+facebook_ads_electric_vehicles_with_openai_summaries.csv
 
 # JSON files (all analysis results and raw data)
 *.json
@@ -299,4 +301,3 @@ logs/
 # Generated documentation
 docs/build/
 docs/_build/
-facebook_ads_electric_vehicles_with_openai_summaries.csv
