@@ -14,6 +14,7 @@ from collections import Counter
 import requests
 from PIL import Image
 import io
+import os
 
 # Page configuration
 st.set_page_config(
@@ -24,9 +25,39 @@ st.set_page_config(
 )
 
 
+def download_large_file_if_missing():
+    """Download the large dataset if it's missing (for Streamlit Cloud deployment)."""
+    filename = "facebook_ads_electric_vehicles_with_openai_summaries.csv"
+
+    if not os.path.exists(filename):
+        st.warning("📥 Large dataset not found. Downloading from external source...")
+
+        # You can host this file on Google Drive, Dropbox, or another cloud service
+        # For now, we'll create a fallback message
+        st.error(
+            """
+        ⚠️ **Large dataset file missing!**
+
+        The file `facebook_ads_electric_vehicles_with_openai_summaries.csv` is not available.
+
+        **Options to fix this:**
+        1. Upload the file to a cloud service (Google Drive, Dropbox, etc.)
+        2. Use the smaller sample dataset instead
+        3. Split the large file into smaller chunks
+
+        For now, the app will try to use alternative datasets.
+        """
+        )
+        return False
+    return True
+
+
 @st.cache_data
 def load_data():
     """Load and cache the EV ads data."""
+    # Check if large file exists, download if missing
+    download_large_file_if_missing()
+
     try:
         # Try to load the sample version first (GitHub-friendly), then fall back to other versions
         try:
