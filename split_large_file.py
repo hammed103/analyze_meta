@@ -8,7 +8,7 @@ import os
 
 
 def split_csv_file(
-    input_file, chunk_size=20000, output_prefix="facebook_ads_chunk", output_dir="Data"
+    input_file, chunk_size=5000, output_prefix="facebook_ads_chunk", output_dir="Data"
 ):
     """
     Split a large CSV file into smaller chunks in a specified directory.
@@ -112,12 +112,12 @@ if __name__ == "__main__":
 
 
 if __name__ == "__main__":
-    input_file = "facebook_ads_electric_vehicles_with_openai_summaries.csv"
+    input_file = "facebook_ads_electric_vehicles_clean.csv"
 
     if os.path.exists(input_file):
         # Use smaller chunk size for better GitHub compatibility
         # 3000 rows should create ~8MB chunks which are well under GitHub limits
-        split_csv_file(input_file, chunk_size=3000)
+        split_csv_file(input_file, chunk_size=5000)
     else:
         print(f"File {input_file} not found!")
         print("Make sure the file is in the current directory.")
