@@ -30,13 +30,15 @@ def load_data():
     try:
         # Try to load the sample version first (GitHub-friendly), then fall back to other versions
         try:
-            df = pd.read_csv("facebook_ads_electric_vehicles_sample.csv")
+            df = pd.read_csv("facebook_ads_electric_vehicles_with_openai_summaries.csv")
             st.info(
                 "✓ Loaded sample dataset (5,000 ads) with OpenAI summaries and image themes - GitHub-friendly size"
             )
         except FileNotFoundError:
             try:
-                df = pd.read_csv("facebook_ads_electric_vehicles_clean.csv")
+                df = pd.read_csv(
+                    "facebook_ads_electric_vehicles_with_openai_summaries.csv"
+                )
                 st.info(
                     "✓ Loaded cleaned AI enhanced data with OpenAI summaries and image themes (optimized file size)"
                 )
