@@ -58,7 +58,7 @@ def load_data_from_chunks():
 
 def check_for_large_file_or_chunks():
     """Check for the large file or chunked data and provide guidance."""
-    filename = "facebook_ads_electric_vehicles_with_openai_summaries.csv"
+    filename = "facebook_ads_electric_vehicles_with_openai_summaries_cached.csv"
     data_dir = "Data"
 
     # Check if large file exists
