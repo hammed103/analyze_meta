@@ -29,7 +29,7 @@ def recombine_chunks():
 
     combined_df = pd.concat(df_list, ignore_index=True)
 
-    output_file = "facebook_ads_electric_vehicles_clean.csv"
+    output_file = "facebook_ads_electric_vehicles_with_openai_summaries_cached.csv"
     combined_df.to_csv(output_file, index=False)
 
     print(f"Recombined into {output_file}")

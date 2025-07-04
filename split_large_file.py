@@ -112,12 +112,27 @@ if __name__ == "__main__":
 
 
 if __name__ == "__main__":
-    input_file = "facebook_ads_electric_vehicles_clean.csv"
+    # Try multiple possible input files in order of preference
+    possible_files = [
+        "facebook_ads_electric_vehicles_with_openai_summaries_cached.csv",
+        "facebook_ads_electric_vehicles_with_openai_summaries.csv",
+        "facebook_ads_electric_vehicles_clean.csv",
+    ]
 
-    if os.path.exists(input_file):
+    input_file = None
+    for file in possible_files:
+        if os.path.exists(file):
+            input_file = file
+            break
+
+    if input_file:
+        print(f"Found input file: {input_file}")
         # Use smaller chunk size for better GitHub compatibility
-        # 3000 rows should create ~8MB chunks which are well under GitHub limits
+        # 5000 rows should create manageable chunks well under GitHub limits
         split_csv_file(input_file, chunk_size=5000)
     else:
-        print(f"File {input_file} not found!")
-        print("Make sure the file is in the current directory.")
+        print("No suitable input file found!")
+        print("Looking for one of these files:")
+        for file in possible_files:
+            print(f"  - {file}")
+        print("Make sure one of these files is in the current directory.")
