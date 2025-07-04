@@ -107,18 +107,22 @@ def load_data():
                 return df
 
         elif data_source == "large_file":
-            df = pd.read_csv("facebook_ads_electric_vehicles_with_openai_summaries.csv")
+            df = pd.read_csv(
+                "facebook_ads_electric_vehicles_with_openai_summaries_cached.csv"
+            )
             st.info("✓ Loaded full dataset with OpenAI summaries and image themes")
             return df
 
         # Fallback to other available datasets
         try:
-            df = pd.read_csv("facebook_ads_electric_vehicles_with_openai_summaries.csv")
+            df = pd.read_csv(
+                "facebook_ads_electric_vehicles_with_openai_summaries_cached.csv"
+            )
             st.info("✓ Loaded dataset with OpenAI summaries and image themes")
         except FileNotFoundError:
             try:
                 df = pd.read_csv(
-                    "facebook_ads_electric_vehicles_with_openai_summaries.csv"
+                    "facebook_ads_electric_vehicles_with_openai_summaries_cached.csv"
                 )
                 st.info(
                     "✓ Loaded cleaned AI enhanced data with OpenAI summaries and image themes (optimized file size)"
@@ -126,7 +130,7 @@ def load_data():
             except FileNotFoundError:
                 try:
                     df = pd.read_csv(
-                        "facebook_ads_electric_vehicles_ultimate_ai_enhanced.csv"
+                        "facebook_ads_electric_vehicles_with_openai_summaries_cached.csv"
                     )
                     st.info(
                         "✓ Loaded ultimate AI enhanced data with OpenAI summaries and image themes"
@@ -134,7 +138,7 @@ def load_data():
                 except FileNotFoundError:
                     try:
                         df = pd.read_csv(
-                            "facebook_ads_electric_vehicles_with_openai_summaries.csv"
+                            "facebook_ads_electric_vehicles_with_openai_summaries_cached.csv"
                         )
                         st.info("✓ Loaded data with OpenAI summaries")
                     except FileNotFoundError:
@@ -151,7 +155,7 @@ def load_data():
             "total_female_audience": 0,
             "page_like_count": 0,
             "spend": None,
-            "first_image_url": None,
+            "new_image_url": None,
             "ad_title": "",
             "ad_text": "",
             "cta_text": "",
@@ -294,16 +298,18 @@ def main():
     # Sidebar filters
     st.sidebar.header("🔍 Filters")
 
-    # Car model filter
-    car_models = sorted(df["matched_car_models"].unique())
+    # Car model filter - handle mixed data types
+    car_models = df["matched_car_models"].fillna("Unknown").astype(str).unique()
+    car_models = sorted([model for model in car_models if model])
     selected_models = st.sidebar.multiselect(
         "Select Car Models",
         car_models,
         default=car_models,  # Select ALL car models by default
     )
 
-    # Advertiser type filter
-    advertiser_types = sorted(df["page_classification"].unique())
+    # Advertiser type filter - handle mixed data types
+    advertiser_types = df["page_classification"].fillna("unknown").astype(str).unique()
+    advertiser_types = sorted([atype for atype in advertiser_types if atype])
     selected_advertiser_types = st.sidebar.multiselect(
         "Select Advertiser Types",
         advertiser_types,
@@ -493,7 +499,7 @@ def main():
         st.header("🖼️ Ad Image Gallery")
 
         # Get all images from filtered data
-        all_image_data = filtered_df[filtered_df["first_image_url"].notna()].copy()
+        all_image_data = filtered_df[filtered_df["new_image_url"].notna()].copy()
         total_images = len(all_image_data)
 
         if total_images == 0:
@@ -561,7 +567,7 @@ def main():
 
                         with col:
                             # Try to load and display image
-                            image = load_image_from_url(row["first_image_url"])
+                            image = load_image_from_url(row["new_image_url"])
 
                             if image:
                                 st.image(
@@ -571,7 +577,7 @@ def main():
                                 )
                             else:
                                 st.error("❌ Could not load image")
-                                st.write(f"URL: {row['first_image_url'][:50]}...")
+                                st.write(f"URL: {row['new_image_url'][:50]}...")
 
                             # Show AI insights prominently
                             if (

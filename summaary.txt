@@ -1,0 +1,361 @@
+
+Hammeds-MacBook-Pro:Meta Analysis hammedbalogun$ python3 extract_themes.py
+=== THEME VALUE COUNTS (Overall) ===
+Brand & Product Focus                  7147
+Dealership/Advertiser                  7083
+Exterior Design                        3924
+Range and Charging                     3348
+Performance                            3286
+Interior and Comfort                   2677
+Safety & Assistance                    2657
+Connectivity and Digital Experience    2501
+Infotainment & Audio                   2214
+Additional Features Mentioned           205
+Advertiser/Dealer                        40
+Additional Models & Incentives           14
+Pricing & Financing Highlights           14
+Dealer/Advertiser                        12
+Advertiser                               12
+Additional Notes                          7
+Price and Incentives                      7
+Visual & Thematic Elements                7
+Pricing & Incentives                      7
+Leasing Details                           7
+Vehicle Options & Pricing                 5
+Booking & Support                         5
+Pricing & Payment                         5
+Technology                                5
+Visual & Promotional Theme                4
+Call-to-Action                            4
+Additional Highlights                     3
+Recall & Safety Issues                    3
+Pricing & Purchase Process                2
+Additional Features & Offerings           2
+Pricing & Options                         2
+Additional Details                        2
+Wheels & Tire Options                     2
+Pricing & Financing                       2
+Additional Features                       2
+Price                                     2
+Deal & Promotions                         2
+Additional Features Highlighted           2
+Deal & Financing Offers                   2
+Purchase Process & Payment Options        2
+Deal & Incentives                         2
+Sustainability                            1
+Practicality and Agility                  1
+Key Features Mentioned                    1
+Additional Offer Details                  1
+Affordability & Durability                1
+Note                                      1
+Pricing & Deal                            1
+Name: count, dtype: int64
+
+============================================================
+=== THEME VALUE COUNTS BY CAR MODEL ===
+============================================================
+
+--- Cupra Born ---
+Total ads: 18
+Brand & Product Focus                  18
+Dealership/Advertiser                  18
+Exterior Design                        15
+Performance                             9
+Range and Charging                      6
+Interior and Comfort                    6
+Infotainment & Audio                    6
+Safety & Assistance                     6
+Connectivity and Digital Experience     6
+Name: count, dtype: int64
+
+--- Volkswagen ID.4 ---
+Total ads: 4187
+Brand & Product Focus                  4187
+Dealership/Advertiser                  4187
+Exterior Design                        2568
+Performance                            2315
+Range and Charging                     2225
+Interior and Comfort                   1689
+Safety & Assistance                    1681
+Connectivity and Digital Experience    1609
+Infotainment & Audio                   1366
+Additional Features Mentioned           141
+Additional Models & Incentives           14
+Pricing & Financing Highlights           14
+Additional Notes                          7
+Leasing Details                           7
+Price and Incentives                      7
+Visual & Thematic Elements                7
+Pricing & Incentives                      7
+Pricing & Payment                         5
+Booking & Support                         5
+Vehicle Options & Pricing                 5
+Recall & Safety Issues                    3
+Deal & Incentives                         2
+Call-to-Action                            2
+Name: count, dtype: int64
+
+--- Volkswagen ID.3 ---
+Total ads: 29
+Brand & Product Focus    29
+Dealership/Advertiser    29
+Exterior Design          16
+Name: count, dtype: int64
+
+--- Tesla Model Y ---
+Total ads: 799
+Brand & Product Focus                  799
+Dealership/Advertiser                  799
+Exterior Design                        338
+Interior and Comfort                   236
+Safety & Assistance                    192
+Connectivity and Digital Experience    155
+Performance                            133
+Range and Charging                     125
+Infotainment & Audio                   115
+Additional Features Mentioned           46
+Additional Features Highlighted          2
+Additional Highlights                    2
+Additional Features                      2
+Pricing & Financing                      2
+Wheels & Tire Options                    2
+Additional Details                       2
+Pricing & Options                        2
+Additional Features & Offerings          2
+Call-to-Action                           2
+Note                                     1
+Affordability & Durability               1
+Name: count, dtype: int64
+
+--- Volvo EX30 ---
+Total ads: 159
+Brand & Product Focus                  159
+Dealership/Advertiser                  159
+Exterior Design                         85
+Range and Charging                      79
+Performance                             73
+Interior and Comfort                    71
+Safety & Assistance                     66
+Connectivity and Digital Experience     66
+Infotainment & Audio                    64
+Pricing & Deal                           1
+Sustainability                           1
+Practicality and Agility                 1
+Name: count, dtype: int64
+
+--- Kia EV3 ---
+Total ads: 476
+Brand & Product Focus                  476
+Dealership/Advertiser                  476
+Exterior Design                        170
+Range and Charging                     146
+Safety & Assistance                     89
+Performance                             86
+Interior and Comfort                    68
+Infotainment & Audio                    67
+Connectivity and Digital Experience     67
+Technology                               5
+Name: count, dtype: int64
+
+--- Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y ---
+Total ads: 196
+Brand & Product Focus                  196
+Dealership/Advertiser                  196
+Range and Charging                     182
+Performance                            182
+Interior and Comfort                   182
+Infotainment & Audio                   182
+Exterior Design                        182
+Safety & Assistance                    182
+Connectivity and Digital Experience    182
+Additional Features Mentioned           14
+Name: count, dtype: int64
+
+--- Hyundai Ioniq 5; Volkswagen ID.4 ---
+Total ads: 81
+Brand & Product Focus                  81
+Dealership/Advertiser                  81
+Range and Charging                     27
+Performance                            27
+Interior and Comfort                   27
+Infotainment & Audio                   27
+Exterior Design                        27
+Safety & Assistance                    27
+Connectivity and Digital Experience    27
+Name: count, dtype: int64
+
+--- MG4 ---
+Total ads: 37
+Brand & Product Focus                  37
+Dealership/Advertiser                  37
+Safety & Assistance                    17
+Exterior Design                        16
+Performance                            15
+Interior and Comfort                   15
+Infotainment & Audio                   15
+Connectivity and Digital Experience    14
+Range and Charging                     13
+Additional Features Mentioned           4
+Visual & Promotional Theme              4
+Deal & Financing Offers                 2
+Purchase Process & Payment Options      2
+Deal & Promotions                       2
+Pricing & Purchase Process              2
+Key Features Mentioned                  1
+Additional Highlights                   1
+Name: count, dtype: int64
+
+--- Renault Megane E-Tech ---
+Total ads: 27
+Brand & Product Focus                  27
+Dealership/Advertiser                  27
+Range and Charging                     22
+Performance                             2
+Interior and Comfort                    2
+Infotainment & Audio                    2
+Exterior Design                         2
+Safety & Assistance                     2
+Connectivity and Digital Experience     2
+Name: count, dtype: int64
+
+--- Volvo EC40 ---
+Total ads: 41
+Brand & Product Focus                  41
+Dealership/Advertiser                  41
+Performance                            37
+Range and Charging                     35
+Exterior Design                        35
+Safety & Assistance                     4
+Interior and Comfort                    2
+Infotainment & Audio                    2
+Connectivity and Digital Experience     2
+Name: count, dtype: int64
+
+--- Volkswagen ID.3; Volkswagen ID.4 ---
+Total ads: 4
+Brand & Product Focus    4
+Dealership/Advertiser    4
+Name: count, dtype: int64
+
+--- Hyundai Ioniq 5 ---
+Total ads: 867
+Brand & Product Focus                  867
+Dealership/Advertiser                  803
+Range and Charging                     390
+Exterior Design                        369
+Performance                            311
+Safety & Assistance                    301
+Interior and Comfort                   284
+Connectivity and Digital Experience    281
+Infotainment & Audio                   275
+Advertiser/Dealer                       40
+Advertiser                              12
+Dealer/Advertiser                       12
+Name: count, dtype: int64
+
+--- BMW iX2 ---
+Total ads: 11
+Brand & Product Focus                  11
+Dealership/Advertiser                  11
+Performance                             3
+Range and Charging                      2
+Interior and Comfort                    2
+Infotainment & Audio                    2
+Exterior Design                         2
+Safety & Assistance                     2
+Connectivity and Digital Experience     2
+Name: count, dtype: int64
+
+--- Audi Q4 e-tron ---
+Total ads: 122
+Brand & Product Focus                  122
+Dealership/Advertiser                  122
+Exterior Design                         73
+Range and Charging                      68
+Performance                             67
+Interior and Comfort                    67
+Safety & Assistance                     66
+Connectivity and Digital Experience     66
+Infotainment & Audio                    65
+Name: count, dtype: int64
+
+--- BMW iX3 ---
+Total ads: 39
+Brand & Product Focus                  39
+Dealership/Advertiser                  39
+Range and Charging                      8
+Performance                             8
+Interior and Comfort                    8
+Infotainment & Audio                    8
+Exterior Design                         8
+Safety & Assistance                     8
+Connectivity and Digital Experience     8
+Additional Offer Details                1
+Name: count, dtype: int64
+
+--- BMW iX2; BMW iX1 ---
+Total ads: 5
+Brand & Product Focus    5
+Dealership/Advertiser    5
+Range and Charging       5
+Name: count, dtype: int64
+
+--- BMW iX2; BMW iX1; BMW iX3 ---
+Total ads: 10
+Brand & Product Focus                  10
+Dealership/Advertiser                  10
+Range and Charging                      4
+Performance                             4
+Interior and Comfort                    4
+Infotainment & Audio                    4
+Exterior Design                         4
+Safety & Assistance                     4
+Connectivity and Digital Experience     4
+Name: count, dtype: int64
+
+--- BMW iX1 ---
+Total ads: 10
+Brand & Product Focus                  10
+Dealership/Advertiser                  10
+Performance                             8
+Interior and Comfort                    8
+Infotainment & Audio                    8
+Exterior Design                         8
+Range and Charging                      5
+Safety & Assistance                     4
+Connectivity and Digital Experience     4
+Price                                   2
+Name: count, dtype: int64
+
+--- BMW iX1; BMW iX3 ---
+Total ads: 26
+Brand & Product Focus                  26
+Dealership/Advertiser                  26
+Range and Charging                      6
+Performance                             6
+Interior and Comfort                    6
+Infotainment & Audio                    6
+Exterior Design                         6
+Safety & Assistance                     6
+Connectivity and Digital Experience     6
+Name: count, dtype: int64
+
+--- BMW iX1; Tesla Model Y ---
+Total ads: 1
+Brand & Product Focus    1
+Dealership/Advertiser    1
+Name: count, dtype: int64
+
+--- Hyundai Ioniq 5; Audi Q4 e-tron ---
+Total ads: 1
+Brand & Product Focus    1
+Dealership/Advertiser    1
+Name: count, dtype: int64
+
+--- Volkswagen ID.5 ---
+Total ads: 1
+Brand & Product Focus    1
+Dealership/Advertiser    1
+Name: count, dtype: int64
+
+[API KEY REMOVED FOR SECURITY]

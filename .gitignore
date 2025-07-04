@@ -8,7 +8,7 @@
 # CSV files (all Facebook ads data - too large for Git)
 *.csv
 # Allow chunked data files in Data folder (GitHub-friendly sizes)
-!Data/*.csv
+Data/*.csv
 # Exclude the original large file
 facebook_ads_electric_vehicles_with_openai_summaries.csv
 
