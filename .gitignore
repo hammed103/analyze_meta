@@ -10,7 +10,7 @@
 # Allow chunked data files in Data folder (GitHub-friendly sizes)
 !Data/*.csv
 # Exclude the original large file
-facebook_ads_electric_vehicles_with_openai_summaries.csv
+!facebook_ads_electric_vehicles_with_openai_summaries_cached.csv
 
 # JSON files (all analysis results and raw data)
 *.json
