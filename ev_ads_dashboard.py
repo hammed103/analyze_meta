@@ -79,13 +79,13 @@ def check_for_large_file_or_chunks():
     **To enable the full dataset:**
 
     **Option 1: Split the large file (Recommended)**
-    1. Place `facebook_ads_electric_vehicles_with_openai_summaries.csv` in this directory
+    1. Place `facebook_ads_electric_vehicles_with_openai_summaries_cached.csv` in this directory
     2. Run: `python split_large_file.py`
     3. This will create chunks in the `Data/` folder
     4. Refresh the app
 
     **Option 2: Use the large file directly**
-    - Place `facebook_ads_electric_vehicles_with_openai_summaries.csv` in this directory
+    - Place `facebook_ads_electric_vehicles_with_openai_summaries_cached.csv` in this directory
 
     The app will continue with available smaller datasets.
     """
