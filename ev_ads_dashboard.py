@@ -7,15 +7,12 @@ Interactive Streamlit dashboard for analyzing Facebook EV ads data
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import numpy as np
-from collections import Counter
 import requests
 from PIL import Image
 import io
 import os
 import glob
+from collections import Counter
 
 # Page configuration
 st.set_page_config(
@@ -286,6 +283,229 @@ def create_advertiser_type_chart(df):
     return fig
 
 
+# Theme Analysis Functions
+@st.cache_data
+def load_theme_analysis_data():
+    """Load pre-computed theme analysis results (no recomputation)"""
+    theme_data = {}
+    files_found = []
+
+    try:
+        # Load predefined theme analysis
+        if os.path.exists("theme_frequency_overall.csv"):
+            theme_data["overall"] = pd.read_csv("theme_frequency_overall.csv")
+            files_found.append("theme_frequency_overall.csv")
+        if os.path.exists("theme_frequency_by_model.csv"):
+            theme_data["by_model"] = pd.read_csv("theme_frequency_by_model.csv")
+            files_found.append("theme_frequency_by_model.csv")
+
+        # Load NLP analysis
+        if os.path.exists("lightweight_nlp_keywords.csv"):
+            theme_data["nlp_keywords"] = pd.read_csv("lightweight_nlp_keywords.csv")
+            files_found.append("lightweight_nlp_keywords.csv")
+        if os.path.exists("lightweight_nlp_model_themes.csv"):
+            theme_data["nlp_by_model"] = pd.read_csv("lightweight_nlp_model_themes.csv")
+            files_found.append("lightweight_nlp_model_themes.csv")
+        if os.path.exists("lightweight_nlp_themes.csv"):
+            theme_data["nlp_themes"] = pd.read_csv("lightweight_nlp_themes.csv")
+            files_found.append("lightweight_nlp_themes.csv")
+
+        # Store info about loaded files for display
+        theme_data["_files_loaded"] = files_found
+
+    except Exception as e:
+        st.error(f"Error loading theme analysis data: {e}")
+
+    return theme_data
+
+
+def get_predefined_themes():
+    """Return predefined themes for analysis"""
+    return [
+        "Eco-Friendly",
+        "Design",
+        "Performance/Sporty",
+        "Family-Oriented",
+        "Modern/Sleek",
+        "Connectivity",
+        "Safety",
+        "Dynamic",
+        "Comfort",
+        "Innovative/Tech",
+        "Contemporary",
+        "Futuristic",
+        "Minimalist",
+        "Bold/Striking",
+        "Nature/Outdoor",
+        "Sophisticated",
+        "Luxury",
+        "Efficiency",
+        "Professional",
+        "Urban/City",
+    ]
+
+
+def display_theme_files_info(theme_data):
+    """Display information about loaded theme analysis files"""
+    if "_files_loaded" in theme_data and theme_data["_files_loaded"]:
+        st.success(
+            f"✅ Loaded {len(theme_data['_files_loaded'])} theme analysis files:"
+        )
+        for file in theme_data["_files_loaded"]:
+            st.write(f"  • {file}")
+    else:
+        st.warning("⚠️ No pre-computed theme analysis files found.")
+        st.info(
+            """
+        **To generate theme analysis data, run:**
+        ```bash
+        python3 simple_theme_analysis.py
+        python3 lightweight_nlp_analysis.py
+        ```
+        """
+        )
+    return len(theme_data.get("_files_loaded", []))
+
+
+def get_theme_keywords(theme):
+    """Get keywords for each theme"""
+    keyword_map = {
+        "Eco-Friendly": [
+            "eco",
+            "green",
+            "sustainable",
+            "environmental",
+            "clean",
+            "electric",
+        ],
+        "Design": ["design", "aesthetic", "beautiful", "attractive", "visual", "style"],
+        "Performance/Sporty": [
+            "performance",
+            "sporty",
+            "speed",
+            "racing",
+            "athletic",
+            "powerful",
+        ],
+        "Family-Oriented": [
+            "family",
+            "practical",
+            "spacious",
+            "comfortable",
+            "safe",
+            "reliable",
+        ],
+        "Modern/Sleek": [
+            "modern",
+            "sleek",
+            "contemporary",
+            "clean",
+            "streamlined",
+            "stylish",
+        ],
+        "Connectivity": [
+            "connected",
+            "connectivity",
+            "digital",
+            "online",
+            "network",
+            "smart",
+        ],
+        "Safety": ["safety", "secure", "protection", "safe", "reliable", "trusted"],
+        "Dynamic": ["dynamic", "energetic", "vibrant", "active", "motion", "movement"],
+        "Comfort": ["comfort", "comfortable", "cozy", "relaxing", "smooth", "pleasant"],
+        "Innovative/Tech": [
+            "innovative",
+            "technology",
+            "tech",
+            "advanced",
+            "cutting-edge",
+            "smart",
+        ],
+        "Contemporary": [
+            "contemporary",
+            "current",
+            "today",
+            "now",
+            "present",
+            "latest",
+        ],
+        "Futuristic": [
+            "futuristic",
+            "future",
+            "tomorrow",
+            "next-gen",
+            "advanced",
+            "revolutionary",
+        ],
+        "Minimalist": [
+            "minimalist",
+            "simple",
+            "clean",
+            "uncluttered",
+            "minimal",
+            "pure",
+        ],
+        "Bold/Striking": [
+            "bold",
+            "striking",
+            "dramatic",
+            "eye-catching",
+            "powerful",
+            "impressive",
+        ],
+        "Nature/Outdoor": [
+            "nature",
+            "outdoor",
+            "landscape",
+            "scenic",
+            "natural",
+            "countryside",
+        ],
+        "Sophisticated": [
+            "sophisticated",
+            "elegant",
+            "refined",
+            "premium",
+            "upscale",
+            "classy",
+        ],
+        "Luxury": [
+            "luxury",
+            "luxurious",
+            "premium",
+            "high-end",
+            "exclusive",
+            "prestige",
+        ],
+        "Efficiency": [
+            "efficient",
+            "efficiency",
+            "economical",
+            "optimized",
+            "smart",
+            "intelligent",
+        ],
+        "Professional": [
+            "professional",
+            "business",
+            "executive",
+            "corporate",
+            "work",
+            "office",
+        ],
+        "Urban/City": [
+            "urban",
+            "city",
+            "cityscape",
+            "metropolitan",
+            "downtown",
+            "street",
+        ],
+    }
+    return keyword_map.get(theme, [theme.lower().replace("/", " ").split()])
+
+
 def main():
     st.title("🚗⚡ Meta Analysis - Electric Vehicle Ads Dashboard")
     st.markdown("---")
@@ -323,12 +543,13 @@ def main():
     ]
 
     # Main dashboard tabs
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
         [
             "📊 Overview",
             "🚗 Car Model Analysis",
             "🎯 Ad Creative Analysis",
             "🖼️ Image Gallery",
+            "🎨 Theme Analysis",
             "📈 Advanced Analytics",
         ]
     )
@@ -718,6 +939,201 @@ def main():
                 file_name=f"ev_ads_filtered_{len(filtered_df)}_records.csv",
                 mime="text/csv",
             )
+
+    with tab6:
+        st.header("🎨 Theme Analysis")
+        st.markdown(
+            "📊 **Pre-computed theme analysis results** - View advertising themes and messaging patterns"
+        )
+
+        # Load theme analysis data
+        theme_data = load_theme_analysis_data()
+
+        # Display file loading info
+        files_loaded = display_theme_files_info(theme_data)
+
+        if files_loaded > 0:
+            # Display pre-computed theme analysis
+
+            # Create tabs for different analyses
+            theme_tab1, theme_tab2, theme_tab3 = st.tabs(
+                ["📊 Overall Themes", "🚗 Themes by Model", "🔍 NLP Keywords"]
+            )
+
+            with theme_tab1:
+                st.subheader("Overall Theme Frequency")
+
+                if "overall" in theme_data:
+                    overall_themes = theme_data["overall"]
+
+                    col1, col2 = st.columns([2, 1])
+
+                    with col1:
+                        fig = px.bar(
+                            overall_themes.head(15),
+                            x="frequency",
+                            y="theme",
+                            orientation="h",
+                            title="Top 15 Themes Across All EV Ads",
+                            labels={
+                                "frequency": "Number of Mentions",
+                                "theme": "Theme",
+                            },
+                        )
+                        fig.update_layout(yaxis={"categoryorder": "total ascending"})
+                        st.plotly_chart(fig, use_container_width=True)
+
+                    with col2:
+                        st.subheader("📈 Key Statistics")
+                        total_mentions = overall_themes["frequency"].sum()
+                        st.metric("Total Theme Mentions", f"{total_mentions:,}")
+                        st.metric("Unique Themes", len(overall_themes))
+
+                        top_theme = overall_themes.iloc[0]
+                        st.metric(
+                            "Top Theme",
+                            top_theme["theme"],
+                            f"{top_theme['percentage']:.1f}%",
+                        )
+
+                        # Show top 10 themes as metrics
+                        st.subheader("🏆 Top 10 Themes")
+                        for _, row in overall_themes.head(10).iterrows():
+                            st.write(
+                                f"**{row['theme']}**: {row['frequency']:,} ({row['percentage']:.1f}%)"
+                            )
+
+            with theme_tab2:
+                st.subheader("Themes by Car Model")
+
+                if "by_model" in theme_data:
+                    model_themes = theme_data["by_model"]
+
+                    # Get top models by total theme mentions
+                    model_totals = (
+                        model_themes.groupby("car_model")["frequency"]
+                        .sum()
+                        .sort_values(ascending=False)
+                    )
+
+                    # Model selector
+                    selected_model = st.selectbox(
+                        "Select Car Model for Detailed Analysis:",
+                        options=model_totals.index.tolist(),
+                        index=0,
+                    )
+
+                    if selected_model:
+                        model_data = model_themes[
+                            model_themes["car_model"] == selected_model
+                        ].sort_values("frequency", ascending=False)
+
+                        col1, col2 = st.columns([2, 1])
+
+                        with col1:
+                            fig = px.bar(
+                                model_data.head(10),
+                                x="frequency",
+                                y="theme",
+                                orientation="h",
+                                title=f"Top 10 Themes for {selected_model}",
+                                labels={
+                                    "frequency": "Number of Mentions",
+                                    "theme": "Theme",
+                                },
+                            )
+                            fig.update_layout(
+                                yaxis={"categoryorder": "total ascending"}
+                            )
+                            st.plotly_chart(fig, use_container_width=True)
+
+                        with col2:
+                            st.subheader(f"📊 {selected_model} Stats")
+                            total_mentions = model_data["frequency"].sum()
+                            st.metric("Total Mentions", f"{total_mentions:,}")
+                            st.metric("Unique Themes", len(model_data))
+
+                            if len(model_data) > 0:
+                                top_theme = model_data.iloc[0]
+                                st.metric(
+                                    "Top Theme",
+                                    top_theme["theme"],
+                                    f"{top_theme['percentage']:.1f}%",
+                                )
+
+                    # Comparison heatmap
+                    st.subheader("🔥 Theme Heatmap by Model")
+
+                    # Get top 5 models and top 10 themes for heatmap
+                    top_models = model_totals.head(5).index.tolist()
+                    top_themes_overall = (
+                        theme_data["overall"].head(10)["theme"].tolist()
+                    )
+
+                    # Create pivot table
+                    heatmap_data = (
+                        model_themes[
+                            (model_themes["car_model"].isin(top_models))
+                            & (model_themes["theme"].isin(top_themes_overall))
+                        ]
+                        .pivot(index="theme", columns="car_model", values="percentage")
+                        .fillna(0)
+                    )
+
+                    if not heatmap_data.empty:
+                        fig = px.imshow(
+                            heatmap_data,
+                            title="Theme Distribution Heatmap (Top 5 Models vs Top 10 Themes)",
+                            labels={"color": "Percentage of Model's Themes"},
+                            color_continuous_scale="Viridis",
+                        )
+                        st.plotly_chart(fig, use_container_width=True)
+
+            with theme_tab3:
+                st.subheader("NLP-Discovered Keywords & Themes")
+
+                if "nlp_keywords" in theme_data:
+                    nlp_keywords = theme_data["nlp_keywords"]
+
+                    col1, col2 = st.columns(2)
+
+                    with col1:
+                        st.subheader("🔍 Top Keywords (TF-IDF)")
+
+                        fig = px.bar(
+                            nlp_keywords.head(20),
+                            x="tfidf_score",
+                            y="keyword",
+                            orientation="h",
+                            title="Top 20 Keywords by TF-IDF Score",
+                        )
+                        fig.update_layout(yaxis={"categoryorder": "total ascending"})
+                        st.plotly_chart(fig, use_container_width=True)
+
+                    with col2:
+                        st.subheader("📈 Keyword Statistics")
+                        st.metric("Total Keywords", len(nlp_keywords))
+
+                        top_keyword = nlp_keywords.iloc[0]
+                        st.metric(
+                            "Top Keyword",
+                            top_keyword["keyword"],
+                            f"TF-IDF: {top_keyword['tfidf_score']:.4f}",
+                        )
+
+                        # Show top keywords list
+                        st.subheader("🏆 Top 15 Keywords")
+                        for _, row in nlp_keywords.head(15).iterrows():
+                            st.write(f"**{row['keyword']}**: {row['tfidf_score']:.4f}")
+
+                if "nlp_themes" in theme_data:
+                    st.subheader("🎨 NLP-Discovered Themes")
+                    nlp_themes = theme_data["nlp_themes"]
+
+                    for _, theme in nlp_themes.iterrows():
+                        with st.expander(f"🎯 {theme['theme_name']}"):
+                            st.write(f"**Keywords:** {theme['top_keywords']}")
+                            st.write(f"**Cluster ID:** {theme['cluster_id']}")
 
 
 if __name__ == "__main__":

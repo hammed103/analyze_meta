@@ -12,6 +12,20 @@
 # Exclude the original large file
 !facebook_ads_electric_vehicles_with_openai_summaries_cached.csv
 
+# Allow theme analysis results (small files, important for dashboard)
+!theme_frequency_overall.csv
+!theme_frequency_by_model.csv
+!lightweight_nlp_keywords.csv
+!lightweight_nlp_model_themes.csv
+!lightweight_nlp_themes.csv
+!detailed_theme_analysis.csv
+
+# Allow theme analysis visualizations
+!theme_frequency_chart.png
+!model_theme_heatmap.png
+!nlp_keywords_chart.png
+!theme_comparison_summary.png
+
 # JSON files (all analysis results and raw data)
 *.json
 

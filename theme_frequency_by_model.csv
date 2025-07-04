@@ -1,0 +1,340 @@
+car_model,theme,frequency,percentage
+Cupra Born,Modern/Sleek,16,9.63855421686747
+Cupra Born,Urban/City,13,7.83132530120482
+Cupra Born,Performance/Sporty,16,9.63855421686747
+Cupra Born,Dynamic,13,7.83132530120482
+Cupra Born,Eco-Friendly,16,9.63855421686747
+Cupra Born,Contemporary,13,7.83132530120482
+Cupra Born,Design,16,9.63855421686747
+Cupra Born,Nature/Outdoor,11,6.626506024096386
+Cupra Born,Family-Oriented,9,5.421686746987952
+Cupra Born,Safety,9,5.421686746987952
+Cupra Born,Connectivity,9,5.421686746987952
+Cupra Born,Minimalist,10,6.024096385542169
+Cupra Born,Innovative/Tech,6,3.614457831325301
+Cupra Born,Comfort,6,3.614457831325301
+Cupra Born,Bold/Striking,3,1.8072289156626504
+Volkswagen ID.4,Performance/Sporty,3278,10.866538487038389
+Volkswagen ID.4,Eco-Friendly,3992,13.233441623019292
+Volkswagen ID.4,Family-Oriented,2620,8.685274812703044
+Volkswagen ID.4,Safety,2162,7.167009215673274
+Volkswagen ID.4,Comfort,1706,5.655373599416562
+Volkswagen ID.4,Design,3023,10.021215938473778
+Volkswagen ID.4,Connectivity,2642,8.758204601206657
+Volkswagen ID.4,Modern/Sleek,2396,7.942716966120798
+Volkswagen ID.4,Innovative/Tech,1268,4.203407810117351
+Volkswagen ID.4,Contemporary,1424,4.7205463104157
+Volkswagen ID.4,Dynamic,2076,6.881920042431878
+Volkswagen ID.4,Minimalist,547,1.81329974143075
+Volkswagen ID.4,Professional,373,1.2364914141748988
+Volkswagen ID.4,Bold/Striking,303,1.0044420871179474
+Volkswagen ID.4,Futuristic,853,2.827686799708281
+Volkswagen ID.4,Sophisticated,221,0.7326128754226613
+Volkswagen ID.4,Luxury,143,0.47404362527348665
+Volkswagen ID.4,Nature/Outdoor,438,1.451965789299211
+Volkswagen ID.4,Efficiency,628,2.081813962739508
+Volkswagen ID.4,Urban/City,73,0.24199429821653518
+Volkswagen ID.3,Modern/Sleek,29,13.063063063063062
+Volkswagen ID.3,Sophisticated,27,12.162162162162163
+Volkswagen ID.3,Innovative/Tech,28,12.612612612612612
+Volkswagen ID.3,Eco-Friendly,24,10.81081081081081
+Volkswagen ID.3,Contemporary,29,13.063063063063062
+Volkswagen ID.3,Minimalist,28,12.612612612612612
+Volkswagen ID.3,Professional,6,2.7027027027027026
+Volkswagen ID.3,Design,29,13.063063063063062
+Volkswagen ID.3,Luxury,10,4.504504504504505
+Volkswagen ID.3,Futuristic,11,4.954954954954955
+Volkswagen ID.3,Dynamic,1,0.45045045045045046
+Tesla Model Y,Modern/Sleek,527,8.293988039030532
+Tesla Model Y,Performance/Sporty,475,7.475605917532263
+Tesla Model Y,Dynamic,227,3.5725527226943656
+Tesla Model Y,Eco-Friendly,605,9.521561221277935
+Tesla Model Y,Luxury,407,6.405413912496065
+Tesla Model Y,Contemporary,416,6.547056971986151
+Tesla Model Y,Minimalist,209,3.2892666037141955
+Tesla Model Y,Nature/Outdoor,166,2.612527541706012
+Tesla Model Y,Design,751,11.819326408561535
+Tesla Model Y,Sophisticated,349,5.492603084671073
+Tesla Model Y,Family-Oriented,420,6.610009442870633
+Tesla Model Y,Safety,436,6.861819326408561
+Tesla Model Y,Comfort,245,3.8558388416745357
+Tesla Model Y,Connectivity,376,5.917532263141329
+Tesla Model Y,Innovative/Tech,303,4.768649669499528
+Tesla Model Y,Efficiency,43,0.6767390620081838
+Tesla Model Y,Futuristic,163,2.56531318854265
+Tesla Model Y,Bold/Striking,143,2.250550834120239
+Tesla Model Y,Professional,60,0.9442870632672332
+Tesla Model Y,Urban/City,33,0.5193578847969783
+Volvo EX30,Performance/Sporty,119,9.160892994611238
+Volvo EX30,Eco-Friendly,144,11.085450346420323
+Volvo EX30,Contemporary,89,6.851424172440339
+Volvo EX30,Family-Oriented,107,8.237105465742879
+Volvo EX30,Safety,103,7.929176289453426
+Volvo EX30,Comfort,78,6.0046189376443415
+Volvo EX30,Design,141,10.854503464203233
+Volvo EX30,Connectivity,100,7.698229407236336
+Volvo EX30,Dynamic,67,5.157813702848345
+Volvo EX30,Modern/Sleek,86,6.620477290223249
+Volvo EX30,Urban/City,16,1.2317167051578137
+Volvo EX30,Sophisticated,25,1.924557351809084
+Volvo EX30,Luxury,27,2.0785219399538106
+Volvo EX30,Minimalist,43,3.3102386451116246
+Volvo EX30,Innovative/Tech,57,4.387990762124711
+Volvo EX30,Futuristic,27,2.0785219399538106
+Volvo EX30,Professional,10,0.7698229407236336
+Volvo EX30,Efficiency,14,1.077752117013087
+Volvo EX30,Bold/Striking,22,1.6936104695919936
+Volvo EX30,Nature/Outdoor,24,1.8475750577367205
+Kia EV3,Performance/Sporty,220,6.320022981901752
+Kia EV3,Sophisticated,111,3.1887388681413387
+Kia EV3,Innovative/Tech,351,10.08330939385234
+Kia EV3,Eco-Friendly,476,13.674231542660156
+Kia EV3,Luxury,39,1.120367710428038
+Kia EV3,Family-Oriented,189,5.429474288997414
+Kia EV3,Professional,92,2.642918701522551
+Kia EV3,Design,426,12.23786268313703
+Kia EV3,Contemporary,157,4.510198218902614
+Kia EV3,Safety,181,5.1996552714737145
+Kia EV3,Modern/Sleek,270,7.756391841424878
+Kia EV3,Minimalist,195,5.601838552140189
+Kia EV3,Futuristic,128,3.6771042803792016
+Kia EV3,Nature/Outdoor,90,2.585463947141626
+Kia EV3,Connectivity,155,4.4527434645216895
+Kia EV3,Dynamic,108,3.102556736569951
+Kia EV3,Bold/Striking,125,3.590922148807814
+Kia EV3,Efficiency,23,0.6607296753806378
+Kia EV3,Urban/City,32,0.9192760700948004
+Kia EV3,Comfort,113,3.2461936225222634
+Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y,Performance/Sporty,196,14.285714285714285
+Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y,Dynamic,182,13.26530612244898
+Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y,Family-Oriented,196,14.285714285714285
+Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y,Safety,196,14.285714285714285
+Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y,Comfort,182,13.26530612244898
+Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y,Design,196,14.285714285714285
+Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y,Connectivity,196,14.285714285714285
+Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y,Luxury,28,2.0408163265306123
+Hyundai Ioniq 5; Volkswagen ID.4,Modern/Sleek,81,11.11111111111111
+Hyundai Ioniq 5; Volkswagen ID.4,Performance/Sporty,81,11.11111111111111
+Hyundai Ioniq 5; Volkswagen ID.4,Eco-Friendly,81,11.11111111111111
+Hyundai Ioniq 5; Volkswagen ID.4,Minimalist,81,11.11111111111111
+Hyundai Ioniq 5; Volkswagen ID.4,Family-Oriented,81,11.11111111111111
+Hyundai Ioniq 5; Volkswagen ID.4,Safety,81,11.11111111111111
+Hyundai Ioniq 5; Volkswagen ID.4,Design,81,11.11111111111111
+Hyundai Ioniq 5; Volkswagen ID.4,Connectivity,81,11.11111111111111
+Hyundai Ioniq 5; Volkswagen ID.4,Dynamic,36,4.938271604938271
+Hyundai Ioniq 5; Volkswagen ID.4,Luxury,9,1.2345679012345678
+Hyundai Ioniq 5; Volkswagen ID.4,Comfort,27,3.7037037037037033
+Hyundai Ioniq 5; Volkswagen ID.4,Innovative/Tech,9,1.2345679012345678
+MG4,Modern/Sleek,33,8.229426433915211
+MG4,Performance/Sporty,34,8.478802992518704
+MG4,Sophisticated,5,1.2468827930174564
+MG4,Luxury,9,2.2443890274314215
+MG4,Contemporary,24,5.985037406483791
+MG4,Family-Oriented,35,8.728179551122196
+MG4,Safety,35,8.728179551122196
+MG4,Comfort,16,3.99002493765586
+MG4,Design,36,8.977556109725686
+MG4,Connectivity,33,8.229426433915211
+MG4,Nature/Outdoor,3,0.7481296758104738
+MG4,Professional,9,2.2443890274314215
+MG4,Minimalist,6,1.4962593516209477
+MG4,Eco-Friendly,30,7.4812967581047385
+MG4,Innovative/Tech,19,4.738154613466334
+MG4,Futuristic,23,5.7356608478802995
+MG4,Bold/Striking,19,4.738154613466334
+MG4,Urban/City,6,1.4962593516209477
+MG4,Dynamic,26,6.483790523690773
+Renault Megane E-Tech,Modern/Sleek,26,12.5
+Renault Megane E-Tech,Performance/Sporty,22,10.576923076923077
+Renault Megane E-Tech,Innovative/Tech,27,12.980769230769232
+Renault Megane E-Tech,Dynamic,26,12.5
+Renault Megane E-Tech,Eco-Friendly,27,12.980769230769232
+Renault Megane E-Tech,Contemporary,15,7.211538461538461
+Renault Megane E-Tech,Bold/Striking,10,4.807692307692308
+Renault Megane E-Tech,Design,27,12.980769230769232
+Renault Megane E-Tech,Nature/Outdoor,15,7.211538461538461
+Renault Megane E-Tech,Futuristic,5,2.403846153846154
+Renault Megane E-Tech,Family-Oriented,2,0.9615384615384616
+Renault Megane E-Tech,Safety,2,0.9615384615384616
+Renault Megane E-Tech,Comfort,2,0.9615384615384616
+Renault Megane E-Tech,Connectivity,2,0.9615384615384616
+Volvo EC40,Modern/Sleek,40,9.70873786407767
+Volvo EC40,Performance/Sporty,39,9.466019417475728
+Volvo EC40,Dynamic,3,0.7281553398058253
+Volvo EC40,Eco-Friendly,41,9.951456310679612
+Volvo EC40,Family-Oriented,6,1.4563106796116505
+Volvo EC40,Safety,6,1.4563106796116505
+Volvo EC40,Comfort,4,0.9708737864077669
+Volvo EC40,Efficiency,3,0.7281553398058253
+Volvo EC40,Design,38,9.223300970873787
+Volvo EC40,Sophisticated,35,8.495145631067961
+Volvo EC40,Innovative/Tech,39,9.466019417475728
+Volvo EC40,Luxury,31,7.524271844660194
+Volvo EC40,Contemporary,17,4.12621359223301
+Volvo EC40,Minimalist,33,8.009708737864079
+Volvo EC40,Bold/Striking,33,8.009708737864079
+Volvo EC40,Futuristic,36,8.737864077669903
+Volvo EC40,Nature/Outdoor,2,0.48543689320388345
+Volvo EC40,Connectivity,6,1.4563106796116505
+Volkswagen ID.3; Volkswagen ID.4,Performance/Sporty,2,7.142857142857142
+Volkswagen ID.3; Volkswagen ID.4,Innovative/Tech,4,14.285714285714285
+Volkswagen ID.3; Volkswagen ID.4,Dynamic,2,7.142857142857142
+Volkswagen ID.3; Volkswagen ID.4,Eco-Friendly,4,14.285714285714285
+Volkswagen ID.3; Volkswagen ID.4,Contemporary,4,14.285714285714285
+Volkswagen ID.3; Volkswagen ID.4,Family-Oriented,2,7.142857142857142
+Volkswagen ID.3; Volkswagen ID.4,Safety,2,7.142857142857142
+Volkswagen ID.3; Volkswagen ID.4,Modern/Sleek,2,7.142857142857142
+Volkswagen ID.3; Volkswagen ID.4,Minimalist,2,7.142857142857142
+Volkswagen ID.3; Volkswagen ID.4,Futuristic,2,7.142857142857142
+Volkswagen ID.3; Volkswagen ID.4,Design,2,7.142857142857142
+Hyundai Ioniq 5,Modern/Sleek,676,9.51442646023927
+Hyundai Ioniq 5,Performance/Sporty,620,8.72624912033779
+Hyundai Ioniq 5,Innovative/Tech,410,5.770584095707249
+Hyundai Ioniq 5,Eco-Friendly,857,12.061928219563688
+Hyundai Ioniq 5,Contemporary,243,3.4201266713581986
+Hyundai Ioniq 5,Family-Oriented,639,8.993666432090079
+Hyundai Ioniq 5,Safety,629,8.852920478536241
+Hyundai Ioniq 5,Design,788,11.090781140042223
+Hyundai Ioniq 5,Connectivity,589,8.2899366643209
+Hyundai Ioniq 5,Comfort,335,4.714989444053484
+Hyundai Ioniq 5,Dynamic,488,6.8684025334271634
+Hyundai Ioniq 5,Minimalist,80,1.1259676284306825
+Hyundai Ioniq 5,Futuristic,163,2.294159042927516
+Hyundai Ioniq 5,Sophisticated,9,0.1266713581984518
+Hyundai Ioniq 5,Nature/Outdoor,78,1.0978184377199156
+Hyundai Ioniq 5,Efficiency,38,0.5348346235045742
+Hyundai Ioniq 5,Bold/Striking,386,5.432793807178044
+Hyundai Ioniq 5,Professional,8,0.11259676284306826
+Hyundai Ioniq 5,Urban/City,59,0.8304011259676284
+Hyundai Ioniq 5,Luxury,10,0.14074595355383532
+BMW iX2,Modern/Sleek,5,4.854368932038835
+BMW iX2,Performance/Sporty,11,10.679611650485436
+BMW iX2,Sophisticated,7,6.796116504854369
+BMW iX2,Innovative/Tech,6,5.825242718446602
+BMW iX2,Eco-Friendly,11,10.679611650485436
+BMW iX2,Luxury,6,5.825242718446602
+BMW iX2,Contemporary,4,3.8834951456310676
+BMW iX2,Futuristic,3,2.912621359223301
+BMW iX2,Family-Oriented,9,8.737864077669903
+BMW iX2,Safety,9,8.737864077669903
+BMW iX2,Comfort,2,1.9417475728155338
+BMW iX2,Design,10,9.70873786407767
+BMW iX2,Connectivity,10,9.70873786407767
+BMW iX2,Dynamic,1,0.9708737864077669
+BMW iX2,Bold/Striking,3,2.912621359223301
+BMW iX2,Nature/Outdoor,3,2.912621359223301
+BMW iX2,Efficiency,2,1.9417475728155338
+BMW iX2,Minimalist,1,0.9708737864077669
+Audi Q4 e-tron,Modern/Sleek,111,9.964093357271095
+Audi Q4 e-tron,Performance/Sporty,71,6.373429084380611
+Audi Q4 e-tron,Innovative/Tech,97,8.707360861759424
+Audi Q4 e-tron,Eco-Friendly,122,10.951526032315979
+Audi Q4 e-tron,Futuristic,74,6.642728904847396
+Audi Q4 e-tron,Family-Oriented,75,6.732495511669659
+Audi Q4 e-tron,Safety,70,6.283662477558348
+Audi Q4 e-tron,Design,121,10.861759425493716
+Audi Q4 e-tron,Connectivity,67,6.014362657091562
+Audi Q4 e-tron,Sophisticated,49,4.3985637342908435
+Audi Q4 e-tron,Luxury,46,4.129263913824058
+Audi Q4 e-tron,Contemporary,55,4.937163375224417
+Audi Q4 e-tron,Nature/Outdoor,42,3.7701974865350087
+Audi Q4 e-tron,Minimalist,26,2.333931777378815
+Audi Q4 e-tron,Professional,8,0.718132854578097
+Audi Q4 e-tron,Comfort,67,6.014362657091562
+Audi Q4 e-tron,Dynamic,6,0.5385996409335727
+Audi Q4 e-tron,Bold/Striking,5,0.4488330341113106
+Audi Q4 e-tron,Urban/City,2,0.17953321364452424
+BMW iX3,Urban/City,20,4.926108374384237
+BMW iX3,Performance/Sporty,32,7.8817733990147785
+BMW iX3,Sophisticated,37,9.113300492610838
+BMW iX3,Innovative/Tech,24,5.911330049261084
+BMW iX3,Dynamic,33,8.12807881773399
+BMW iX3,Eco-Friendly,39,9.60591133004926
+BMW iX3,Luxury,37,9.113300492610838
+BMW iX3,Family-Oriented,29,7.142857142857142
+BMW iX3,Safety,29,7.142857142857142
+BMW iX3,Modern/Sleek,28,6.896551724137931
+BMW iX3,Design,29,7.142857142857142
+BMW iX3,Futuristic,24,5.911330049261084
+BMW iX3,Connectivity,21,5.172413793103448
+BMW iX3,Minimalist,4,0.9852216748768473
+BMW iX3,Comfort,8,1.9704433497536946
+BMW iX3,Contemporary,7,1.7241379310344827
+BMW iX3,Nature/Outdoor,4,0.9852216748768473
+BMW iX3,Professional,1,0.24630541871921183
+BMW iX2; BMW iX1,Performance/Sporty,5,18.51851851851852
+BMW iX2; BMW iX1,Dynamic,5,18.51851851851852
+BMW iX2; BMW iX1,Eco-Friendly,5,18.51851851851852
+BMW iX2; BMW iX1,Luxury,5,18.51851851851852
+BMW iX2; BMW iX1,Design,5,18.51851851851852
+BMW iX2; BMW iX1,Innovative/Tech,2,7.4074074074074066
+BMW iX2; BMW iX1; BMW iX3,Performance/Sporty,10,10.309278350515463
+BMW iX2; BMW iX1; BMW iX3,Innovative/Tech,3,3.0927835051546393
+BMW iX2; BMW iX1; BMW iX3,Dynamic,10,10.309278350515463
+BMW iX2; BMW iX1; BMW iX3,Eco-Friendly,10,10.309278350515463
+BMW iX2; BMW iX1; BMW iX3,Contemporary,3,3.0927835051546393
+BMW iX2; BMW iX1; BMW iX3,Nature/Outdoor,9,9.278350515463918
+BMW iX2; BMW iX1; BMW iX3,Family-Oriented,10,10.309278350515463
+BMW iX2; BMW iX1; BMW iX3,Safety,10,10.309278350515463
+BMW iX2; BMW iX1; BMW iX3,Design,10,10.309278350515463
+BMW iX2; BMW iX1; BMW iX3,Connectivity,10,10.309278350515463
+BMW iX2; BMW iX1; BMW iX3,Luxury,3,3.0927835051546393
+BMW iX2; BMW iX1; BMW iX3,Bold/Striking,4,4.123711340206185
+BMW iX2; BMW iX1; BMW iX3,Comfort,4,4.123711340206185
+BMW iX2; BMW iX1; BMW iX3,Efficiency,1,1.0309278350515463
+BMW iX1,Modern/Sleek,8,6.6115702479338845
+BMW iX1,Performance/Sporty,9,7.43801652892562
+BMW iX1,Sophisticated,9,7.43801652892562
+BMW iX1,Innovative/Tech,6,4.958677685950414
+BMW iX1,Dynamic,4,3.3057851239669422
+BMW iX1,Eco-Friendly,10,8.264462809917356
+BMW iX1,Luxury,9,7.43801652892562
+BMW iX1,Minimalist,4,3.3057851239669422
+BMW iX1,Bold/Striking,4,3.3057851239669422
+BMW iX1,Nature/Outdoor,5,4.132231404958678
+BMW iX1,Family-Oriented,9,7.43801652892562
+BMW iX1,Professional,4,3.3057851239669422
+BMW iX1,Safety,5,4.132231404958678
+BMW iX1,Comfort,8,6.6115702479338845
+BMW iX1,Design,10,8.264462809917356
+BMW iX1,Connectivity,9,7.43801652892562
+BMW iX1,Contemporary,2,1.6528925619834711
+BMW iX1,Futuristic,4,3.3057851239669422
+BMW iX1,Urban/City,2,1.6528925619834711
+BMW iX1; BMW iX3,Performance/Sporty,21,11.666666666666666
+BMW iX1; BMW iX3,Dynamic,26,14.444444444444443
+BMW iX1; BMW iX3,Contemporary,25,13.88888888888889
+BMW iX1; BMW iX3,Family-Oriented,21,11.666666666666666
+BMW iX1; BMW iX3,Safety,21,11.666666666666666
+BMW iX1; BMW iX3,Design,21,11.666666666666666
+BMW iX1; BMW iX3,Connectivity,21,11.666666666666666
+BMW iX1; BMW iX3,Comfort,6,3.3333333333333335
+BMW iX1; BMW iX3,Eco-Friendly,11,6.111111111111111
+BMW iX1; BMW iX3,Innovative/Tech,5,2.7777777777777777
+BMW iX1; BMW iX3,Sophisticated,1,0.5555555555555556
+BMW iX1; BMW iX3,Luxury,1,0.5555555555555556
+BMW iX1; Tesla Model Y,Performance/Sporty,1,14.285714285714285
+BMW iX1; Tesla Model Y,Innovative/Tech,1,14.285714285714285
+BMW iX1; Tesla Model Y,Eco-Friendly,1,14.285714285714285
+BMW iX1; Tesla Model Y,Family-Oriented,1,14.285714285714285
+BMW iX1; Tesla Model Y,Safety,1,14.285714285714285
+BMW iX1; Tesla Model Y,Design,1,14.285714285714285
+BMW iX1; Tesla Model Y,Connectivity,1,14.285714285714285
+Hyundai Ioniq 5; Audi Q4 e-tron,Modern/Sleek,1,12.5
+Hyundai Ioniq 5; Audi Q4 e-tron,Performance/Sporty,1,12.5
+Hyundai Ioniq 5; Audi Q4 e-tron,Eco-Friendly,1,12.5
+Hyundai Ioniq 5; Audi Q4 e-tron,Contemporary,1,12.5
+Hyundai Ioniq 5; Audi Q4 e-tron,Family-Oriented,1,12.5
+Hyundai Ioniq 5; Audi Q4 e-tron,Safety,1,12.5
+Hyundai Ioniq 5; Audi Q4 e-tron,Design,1,12.5
+Hyundai Ioniq 5; Audi Q4 e-tron,Connectivity,1,12.5
+Volkswagen ID.5,Modern/Sleek,1,10.0
+Volkswagen ID.5,Performance/Sporty,1,10.0
+Volkswagen ID.5,Dynamic,1,10.0
+Volkswagen ID.5,Eco-Friendly,1,10.0
+Volkswagen ID.5,Contemporary,1,10.0
+Volkswagen ID.5,Bold/Striking,1,10.0
+Volkswagen ID.5,Family-Oriented,1,10.0
+Volkswagen ID.5,Safety,1,10.0
+Volkswagen ID.5,Design,1,10.0
+Volkswagen ID.5,Connectivity,1,10.0

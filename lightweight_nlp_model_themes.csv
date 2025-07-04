@@ -1,0 +1,72 @@
+car_model,theme,frequency,percentage
+Cupra Born,Design,7,41.17647058823529
+Cupra Born,Volkswagen/Note,3,17.647058823529413
+Cupra Born,Explicitly Mentioned/Explicitly,3,17.647058823529413
+Cupra Born,Specified/Financing,3,17.647058823529413
+Cupra Born,Tesla/High,1,5.88235294117647
+Volkswagen ID.4,Volkswagen/Galpin,1149,27.442082636732746
+Volkswagen ID.4,Rental/Uzbekistan,794,18.963458323381897
+Volkswagen ID.4,Design,589,14.067351325531408
+Volkswagen ID.4,Mentioned/Financing,458,10.938619536661093
+Volkswagen ID.4,Specified/Financing,417,9.959398137090995
+Volkswagen ID.4,Volkswagen/Note,365,8.717458801050872
+Volkswagen ID.4,Mentioned/Rental,354,8.454740864580845
+Volkswagen ID.4,Explicitly Mentioned/Explicitly,61,1.4568903749701456
+Volkswagen ID.3,Volkswagen/Note,22,75.86206896551724
+Volkswagen ID.3,Design,7,24.137931034482758
+Tesla Model Y,Tesla/High,686,85.85732165206508
+Tesla Model Y,Design,50,6.25782227784731
+Tesla Model Y,Specified/Financing,39,4.881101376720901
+Tesla Model Y,Rental/Uzbekistan,11,1.376720901126408
+Tesla Model Y,Explicitly Mentioned/Explicitly,7,0.8760951188986232
+Tesla Model Y,Volkswagen/Note,4,0.5006257822277848
+Tesla Model Y,Mentioned/Financing,2,0.2503128911138924
+Volvo EX30,Performance,130,81.76100628930818
+Volvo EX30,Specified/Financing,23,14.465408805031446
+Volvo EX30,Explicitly Mentioned/Explicitly,3,1.8867924528301887
+Volvo EX30,Design,3,1.8867924528301887
+Kia EV3,Hyundai/Motor,459,96.42857142857143
+Kia EV3,Explicitly Mentioned/Explicitly,15,3.1512605042016806
+Kia EV3,Design,2,0.42016806722689076
+Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y,Explicitly Mentioned/Explicitly,98,50.0
+Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y,Performance,84,42.857142857142854
+Volvo EX30; Hyundai Ioniq 5; Audi Q4 e-tron; BMW iX1; BMW iX3; Tesla Model Y,Specified/Financing,14,7.142857142857142
+Hyundai Ioniq 5; Volkswagen ID.4,Hyundai/Ioniq,54,66.66666666666666
+Hyundai Ioniq 5; Volkswagen ID.4,Specified/Financing,27,33.33333333333333
+MG4,Volkswagen/Note,13,35.13513513513514
+MG4,Design,11,29.72972972972973
+MG4,Mentioned/Financing,8,21.62162162162162
+MG4,Explicitly Mentioned/Explicitly,5,13.513513513513514
+Renault Megane E-Tech,Design,15,55.55555555555556
+Renault Megane E-Tech,Mentioned/Financing,10,37.03703703703704
+Renault Megane E-Tech,Specified/Financing,2,7.4074074074074066
+Volvo EC40,Performance,41,100.0
+Volkswagen ID.3; Volkswagen ID.4,Volkswagen/Note,4,100.0
+Hyundai Ioniq 5,Hyundai/Ioniq,714,82.35294117647058
+Hyundai Ioniq 5,Explicitly Mentioned/Explicitly,73,8.419838523644751
+Hyundai Ioniq 5,Mentioned/Financing,36,4.1522491349480966
+Hyundai Ioniq 5,Specified/Financing,20,2.306805074971165
+Hyundai Ioniq 5,Tesla/High,16,1.845444059976932
+Hyundai Ioniq 5,Design,8,0.922722029988466
+BMW iX2,Volkswagen/Note,8,72.72727272727273
+BMW iX2,Design,2,18.181818181818183
+BMW iX2,Specified/Financing,1,9.090909090909092
+Audi Q4 e-tron,Explicitly Mentioned/Explicitly,60,49.18032786885246
+Audi Q4 e-tron,Design,52,42.62295081967213
+Audi Q4 e-tron,Volkswagen/Note,4,3.278688524590164
+Audi Q4 e-tron,Mentioned/Financing,4,3.278688524590164
+Audi Q4 e-tron,Specified/Financing,2,1.639344262295082
+BMW iX3,Volkswagen/Note,31,79.48717948717949
+BMW iX3,Mentioned/Financing,5,12.82051282051282
+BMW iX3,Mentioned/Rental,2,5.128205128205128
+BMW iX3,Specified/Financing,1,2.564102564102564
+BMW iX2; BMW iX1,Design,5,100.0
+BMW iX2; BMW iX1; BMW iX3,Volkswagen/Note,6,60.0
+BMW iX2; BMW iX1; BMW iX3,Explicitly Mentioned/Explicitly,4,40.0
+BMW iX1,Design,9,90.0
+BMW iX1,Volkswagen/Note,1,10.0
+BMW iX1; BMW iX3,Volkswagen/Note,20,76.92307692307693
+BMW iX1; BMW iX3,Mentioned/Financing,6,23.076923076923077
+BMW iX1; Tesla Model Y,Tesla/High,1,100.0
+Hyundai Ioniq 5; Audi Q4 e-tron,Hyundai/Ioniq,1,100.0
+Volkswagen ID.5,Volkswagen/Note,1,100.0
