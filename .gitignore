@@ -26,6 +26,14 @@
 !nlp_keywords_chart.png
 !theme_comparison_summary.png
 
+# Allow downloaded images for dashboard functionality
+# Total size ~14MB - well within GitHub limits
+!ev_ad_images/
+!sample_images/
+
+# Still block very large image directories if they exist
+downloaded_images/originals/
+
 # JSON files (all analysis results and raw data)
 *.json
 

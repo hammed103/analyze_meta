@@ -188,6 +188,59 @@ def load_image_from_url(url, timeout=5):
         return None
 
 
+def find_local_image(ad_id, image_url):
+    """Find locally saved image for an ad"""
+    import hashlib
+
+    # Generate the same filename used in download scripts
+    url_hash = hashlib.md5(image_url.encode()).hexdigest()[:8]
+    filename = f"{ad_id}_{url_hash}.jpg"
+
+    # Check possible local directories
+    local_dirs = [
+        "ev_ad_images/by_car_model",
+        "ev_ad_images/thumbnails",
+        "sample_images",
+        "downloaded_images/originals",
+    ]
+
+    for base_dir in local_dirs:
+        if os.path.exists(base_dir):
+            # Search in subdirectories
+            for root, dirs, files in os.walk(base_dir):
+                if filename in files:
+                    return os.path.join(root, filename)
+
+            # Also check direct filename match
+            direct_path = os.path.join(base_dir, filename)
+            if os.path.exists(direct_path):
+                return direct_path
+
+    return None
+
+
+def load_image_local_or_url(ad_id, image_url, prefer_local=True):
+    """Load image from local file first, fallback to URL"""
+
+    if prefer_local and pd.notna(image_url):
+        # Try to find local image first
+        local_path = find_local_image(ad_id, image_url)
+        if local_path:
+            try:
+                image = Image.open(local_path)
+                return image, "local"
+            except Exception as e:
+                pass  # Fall back to URL
+
+    # Fallback to URL loading
+    if pd.notna(image_url):
+        image = load_image_from_url(image_url)
+        if image:
+            return image, "url"
+
+    return None, "failed"
+
+
 def analyze_car_model(df, model):
     """Analyze ads for a specific car model."""
     model_data = df[df["matched_car_models"] == model].copy()
@@ -726,6 +779,29 @@ def main():
         if total_images == 0:
             st.info("No images found in the filtered data.")
         else:
+            # Check how many images are available locally
+            local_count = 0
+            for _, row in all_image_data.iterrows():
+                if find_local_image(row["ad_archive_id"], row["new_image_url"]):
+                    local_count += 1
+
+            # Show local vs remote status
+            col_status1, col_status2 = st.columns(2)
+            with col_status1:
+                st.metric("💾 Local Images", f"{local_count}/{total_images}")
+            with col_status2:
+                st.metric(
+                    "🌐 Remote Images", f"{total_images - local_count}/{total_images}"
+                )
+
+            if local_count > 0:
+                st.success(
+                    f"✅ {local_count} images available locally for faster loading!"
+                )
+            else:
+                st.info(
+                    "💡 Download images locally for faster loading using: `python3 download_all_ev_images.py`"
+                )
             # Image display options
             col1, col2, col3 = st.columns([2, 1, 1])
 
@@ -787,13 +863,19 @@ def main():
                         )
 
                         with col:
-                            # Try to load and display image
-                            image = load_image_from_url(row["new_image_url"])
+                            # Try to load image (local first, then URL)
+                            image, source = load_image_local_or_url(
+                                row["ad_archive_id"], row["new_image_url"]
+                            )
 
                             if image:
+                                # Show source indicator
+                                source_icon = "💾" if source == "local" else "🌐"
+                                caption = f"{source_icon} {row['page_name']} - {row['matched_car_models']}"
+
                                 st.image(
                                     image,
-                                    caption=f"{row['page_name']} - {row['matched_car_models']}",
+                                    caption=caption,
                                     use_container_width=True,
                                 )
                             else:
